@@ -22,7 +22,7 @@ export default function FounderSection() {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-md aspect-[3/4] rounded-xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/jai2.png"
+                  src="/jb.jpeg"
                   alt="Jay Bhagwan"
                   fill
                   className="object-cover"
