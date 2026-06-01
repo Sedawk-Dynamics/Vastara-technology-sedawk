@@ -14,30 +14,30 @@ const navLinks = [
 const servicesLinks = [
   {
     label: "Architectural Planning & Coordination",
-    href: "",
+    href: "/services/architectural",
   },
   {
     label: "Land Development",
-    href: "",
+    href: "/services/land-development",
   },
   {
     label: "Ground Execution & Excavation",
-    href: "",
+    href: "/services/execution",
   },
 ]
 
 const verticalLinks = [
   {
     label: "Farmhouse Planning & Development",
-    href: "",
+    href: "/vertical/farmhouse",
   },
   {
     label: "Real Estate Investment Opportunities",
-    href: "",
+    href: "/vertical/investment",
   },
   {
     label: "Industrial Land Readiness & Setup",
-    href: "",
+    href: "/vertical/industrial",
   },
 ]
 
