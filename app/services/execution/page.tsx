@@ -20,7 +20,7 @@ export default function ExecutionPage() {
       <main className="min-h-screen bg-white">
         <PageHero
           title="Earthworks, Excavation & Infrastructure Execution"
-          backgroundImage="/execution/2/Project DMRC CC-05.3.jpg"
+          backgroundImage="https://jdexcavations.co.uk/wp-content/uploads/Earthworks-3.webp"
         />
 
         <ExecutionShowcase />
