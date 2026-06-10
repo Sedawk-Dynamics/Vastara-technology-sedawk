@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Navbar from '@/components/vastara/Navbar'
 import LandDevelopmentContent from '@/components/vastara/LandDevelopmentContent'
+import ProjectGallery from '@/components/vastara/ProjectGallery'
 import VerticalCTASection from '@/components/vastara/VerticalCTASection'
 import Footer from '@/components/vastara/Footer'
 
@@ -15,6 +16,7 @@ export default function LandDevelopmentPage() {
     <>
       <Navbar />
       <LandDevelopmentContent />
+      <ProjectGallery />
       <VerticalCTASection />
       <Footer />
     </>
