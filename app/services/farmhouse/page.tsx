@@ -4,7 +4,6 @@ import PageHero from '@/components/vastara/PageHero'
 import FarmhouseShowcase from '@/components/vastara/FarmhouseShowcase'
 import FarmhouseGallery from '@/components/vastara/FarmhouseGallery'
 import VerticalCTASection from '@/components/vastara/VerticalCTASection'
-import ContactSection from '@/components/vastara/ContactSection'
 import Footer from '@/components/vastara/Footer'
 
 export const metadata: Metadata = {
@@ -143,7 +142,6 @@ export default function FarmhousePage() {
         <FarmhouseShowcase />
         <FarmhouseGallery />
         <VerticalCTASection />
-        <ContactSection />
       </main>
 
       <Footer />
