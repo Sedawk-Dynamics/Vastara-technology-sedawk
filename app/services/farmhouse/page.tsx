@@ -93,6 +93,10 @@ export default function FarmhousePage() {
             </div>
           </div>
 
+         
+        </section>
+
+        <FarmhouseShowcase />
           {/* DESIGN PHILOSOPHY */}
           <section className="mt-24">
             <div className="mx-auto max-w-7xl">
@@ -137,10 +141,6 @@ export default function FarmhousePage() {
               </div>
             </div>
           </section>
-        </section>
-
-        <FarmhouseShowcase />
-        <FarmhouseGallery />
         <VerticalCTASection />
       </main>
 
