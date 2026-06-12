@@ -21,72 +21,86 @@ interface Project {
 
 const executionProjects: Project[] = [
   {
-    title: "Project 1 — IGI Airport Terminal 3",
+    title: "Casting Yard Dismantling",
+    location: "Hapur Camp 1 & 2",
+    year: "2026",
+    status: "On-going",
+    desc:
+      "Executing large-scale casting yard dismantling, material demobilization and site clearance for land restoration and future utilization.",
+    images: [
+      "/execution/11/Project 11b_result.webp",
+      "/execution/11/Project 11c_result.webp",
+      "/execution/11/Project 11d_result.webp",
+    ],
+  },
+
+  {
+    title: "DC-09 Metro Corridor",
     location: "Delhi",
-    year: "2012",
+    year: "2024",
     status: "Completed",
     desc:
-      "Executed SMP dismantling and relocation of multiple batching plants, including 90, 120 and 160 capacity units for the IGI Airport Terminal 3 project under Larsen & Toubro. Also completed approximately 40,000 cubic meters of excavation for the ATC Tower within an intensive 15-day schedule through continuous 24-hour operations.",
+      "Executed tunnel muck disposal works for the Delhi Aerocity–Tughlakabad Metro Corridor across four underground stations.",
     images: [
-      "/execution/1/Project 1_result.webp",
-      "/execution/1/Project 1a_result.webp",
-      "/execution/1/Project 1b_result.webp",
+      "/execution/10/10a_result.webp",
+      "/execution/10/Project 10_result.webp",
+      "/execution/10/Project 10.2_result.webp",
     ],
   },
 
   {
-    title: "Project 2 — Delhi Metro CC-05",
-    location: "Delhi Gate, Delhi",
-    year: "2012 – 2013",
-    status: "Completed",
-    desc:
-      "Executed hard rock excavation support works involving specialized drilling and controlled rock splitting operations for underground metro excavation where conventional blasting methods were not feasible.",
-    images: [
-      "/execution/2/Project DMRC CC-05.1.jpg",
-      "/execution/2/Project DMRC CC-05.1a.jpg",
-      "/execution/2/Project DMRC CC-05.3.jpg",
-      "/execution/2/Project DMRC CC-05.4.jpg",
-      "/execution/2/Project DMRC CC-05.6.jpg",
-      "/execution/2/Project DMRC CC-05.7.jpg",
-      "/execution/2/Project DMRC CC-05.10.jpg",
-      "/execution/2/p.jpg",
-    ],
-  },
-
-  {
-    title: "Project 3 — Delhi Metro CC-27",
+    title: "DC-08 Metro Package",
     location: "Delhi",
-    year: "2013 – 2015",
+    year: "2022 – 2024",
     status: "Completed",
     desc:
-      "Executed hard rock excavation works for ramp and shaft excavation, tunnel muck disposal, material transportation and metro infrastructure coordination.",
+      "Executed deep excavation, earthwork and underground infrastructure support for metro connectivity development.",
+    images: ["/execution/9/Project 9_result.webp"],
+  },
+
+  {
+    title: "Delhi–Meerut Rapid Rail",
+    location: "Delhi",
+    year: "2021 – 2024",
+    status: "Completed",
+    desc:
+      "Executed excavation works for ramps, launching shafts, ventilation shafts and underground infrastructure support at Anand Vihar.",
     images: [
-      "/execution/3/Project 3_result.webp",
-      "/execution/3/Project 3.0_result.webp",
-      "/execution/3/Project 3.1_result.webp",
-      "/execution/3/Project 3.2_result.webp",
-      "/execution/3/Project 3a_result.webp",
-      "/execution/3/Project 3b_result.webp",
+      "/execution/7/Project 7_result.webp",
+      "/execution/7/Project 7.1_result.webp",
+      "/execution/7/Project 7.2_result.webp",
     ],
   },
 
   {
-    title: "Project 4 — Jaquar Factory",
-    location: "Bhiwadi, Rajasthan",
-    year: "2016",
+    title: "Sarita Vihar Metro Depot",
+    location: "Delhi",
+    year: "2022 – 2023",
     status: "Completed",
     desc:
-      "Executed early-stage excavation works, demolition, debris handling and rapid site preparation within a challenging 15-day schedule.",
+      "Executed underground ramp excavation including deep earthwork, material handling and construction support operations.",
     images: [
-      "/execution/4/4.1_result.webp",
-      "/execution/4/4.2_result.webp",
-      "/execution/4/4.3_result.webp",
-      "/execution/4/4.4_result.webp",
+      "/execution/8/Project 8_result.webp",
+      "/execution/8/Project 8a_result.webp",
     ],
   },
 
   {
-    title: "Project 5 — Dedicated Freight Corridor",
+    title: "Surya Water Supply",
+    location: "Maharashtra",
+    year: "2020 – 2021",
+    status: "Completed",
+    desc:
+      "Executed pipeline trenching, earthwork, blasting and underground alignment preparation across the Mumbai–Palghar corridor.",
+    images: [
+      "/execution/6/6.1_result.webp",
+      "/execution/6/6.2_result.webp",
+      "/execution/6/6.3_result.webp",
+    ],
+  },
+
+  {
+    title: "Dedicated Freight Corridor",
     location: "Sohna, NCR Delhi",
     year: "2018 – 2021",
     status: "Completed",
@@ -107,81 +121,67 @@ const executionProjects: Project[] = [
   },
 
   {
-    title: "Project 6 — Surya Water Supply",
-    location: "Maharashtra",
-    year: "2020 – 2021",
+    title: "Jaquar Factory",
+    location: "Bhiwadi, Rajasthan",
+    year: "2016",
     status: "Completed",
     desc:
-      "Executed pipeline trenching, earthwork, blasting and underground alignment preparation across the Mumbai–Palghar corridor.",
+      "Executed early-stage excavation works, demolition, debris handling and rapid site preparation within a challenging 15-day schedule.",
     images: [
-      "/execution/6/6.1_result.webp",
-      "/execution/6/6.2_result.webp",
-      "/execution/6/6.3_result.webp",
+      "/execution/4/4.1_result.webp",
+      "/execution/4/4.2_result.webp",
+      "/execution/4/4.3_result.webp",
+      "/execution/4/4.4_result.webp",
     ],
   },
 
   {
-    title: "Project 7 — Delhi–Meerut Rapid Rail",
+    title: "Delhi Metro CC-27",
     location: "Delhi",
-    year: "2021 – 2024",
+    year: "2013 – 2015",
     status: "Completed",
     desc:
-      "Executed excavation works for ramps, launching shafts, ventilation shafts and underground infrastructure support at Anand Vihar.",
+      "Executed hard rock excavation works for ramp and shaft excavation, tunnel muck disposal, material transportation and metro infrastructure coordination.",
     images: [
-      "/execution/7/Project 7_result.webp",
-      "/execution/7/Project 7.1_result.webp",
-      "/execution/7/Project 7.2_result.webp",
+      "/execution/3/Project 3_result.webp",
+      "/execution/3/Project 3.0_result.webp",
+      "/execution/3/Project 3.1_result.webp",
+      "/execution/3/Project 3.2_result.webp",
+      "/execution/3/Project 3a_result.webp",
+      "/execution/3/Project 3b_result.webp",
     ],
   },
 
   {
-    title: "Project 8 — Sarita Vihar Metro Depot",
-    location: "Delhi",
-    year: "2022 – 2023",
+    title: "Delhi Metro CC-05",
+    location: "Delhi Gate, Delhi",
+    year: "2012 – 2013",
     status: "Completed",
     desc:
-      "Executed underground ramp excavation including deep earthwork, material handling and construction support operations.",
+      "Executed hard rock excavation support works involving specialized drilling and controlled rock splitting operations for underground metro excavation where conventional blasting methods were not feasible.",
     images: [
-      "/execution/8/Project 8_result.webp",
-      "/execution/8/Project 8a_result.webp",
+      "/execution/2/Project DMRC CC-05.1.jpg",
+      "/execution/2/Project DMRC CC-05.1a.jpg",
+      "/execution/2/Project DMRC CC-05.3.jpg",
+      "/execution/2/Project DMRC CC-05.4.jpg",
+      "/execution/2/Project DMRC CC-05.6.jpg",
+      "/execution/2/Project DMRC CC-05.7.jpg",
+      "/execution/2/Project DMRC CC-05.10.jpg",
+      "/execution/2/p.jpg",
     ],
   },
 
   {
-    title: "Project 9 — DC-08 Metro Package",
+    title: "IGI Airport Terminal 3",
     location: "Delhi",
-    year: "2022 – 2024",
+    year: "2012",
     status: "Completed",
     desc:
-      "Executed deep excavation, earthwork and underground infrastructure support for metro connectivity development.",
-    images: ["/execution/9/Project 9_result.webp"],
-  },
-
-  {
-    title: "Project 10 — DC-09 Metro Corridor",
-    location: "Delhi",
-    year: "2024",
-    status: "Completed",
-    desc:
-      "Executed tunnel muck disposal works for the Delhi Aerocity–Tughlakabad Metro Corridor across four underground stations.",
+      "Executed SMP dismantling and relocation of multiple batching plants, including 90, 120 and 160 capacity units for the IGI Airport Terminal 3 project under Larsen & Toubro. Also completed approximately 40,000 cubic meters of excavation for the ATC Tower within an intensive 15-day schedule through continuous 24-hour operations.",
     images: [
-      "/execution/10/10a_result.webp",
-      "/execution/10/Project 10_result.webp",
-      "/execution/10/Project 10.2_result.webp",
-    ],
-  },
-
-  {
-    title: "Project 11 — Casting Yard Dismantling",
-    location: "Hapur Camp 1 & 2",
-    year: "2026",
-    status: "On-going",
-    desc:
-      "Executing large-scale casting yard dismantling, material demobilization and site clearance for land restoration and future utilization.",
-    images: [
-      "/execution/11/Project 11b_result.webp",
-      "/execution/11/Project 11c_result.webp",
-      "/execution/11/Project 11d_result.webp",
+      "/execution/1/Project 1_result.webp",
+      "/execution/1/Project 1a_result.webp",
+      "/execution/1/Project 1b_result.webp",
     ],
   },
 ]

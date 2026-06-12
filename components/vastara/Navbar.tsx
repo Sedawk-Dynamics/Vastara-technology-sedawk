@@ -12,18 +12,20 @@ const navLinks = [
 ]
 
 const servicesLinks = [
+  
   {
-    label: "Architectural Planning & Coordination",
+    label: "Architecture, Civil & Interior Works",
     href: "/services/architectural",
   },
-  {
-    label: "Land Development",
-    href: "/services/land-development",
+   {
+    label: "Farmhouse Planning & Development",
+    href: "/services/farmhouse",
   },
   {
     label: "Ground Execution & Excavation",
     href: "/services/execution",
   },
+ 
 ]
 
 const verticalLinks = [
@@ -31,6 +33,7 @@ const verticalLinks = [
     label: "Farmhouse Planning & Development",
     href: "/vertical/farmhouse",
   },
+
   {
     label: "Real Estate Investment Opportunities",
     href: "/vertical/investment",

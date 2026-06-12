@@ -9,25 +9,28 @@ interface GalleryItem {
 
 const isVideo = (src: string) => /\.(mp4|webm|mov)$/i.test(src)
 
-/* 16 Gallery Items */
-const gallery: GalleryItem[] = [
-  { src: "/images/interior/1.jpg", caption: "Luxury Living Room" },
-  { src: "/images/interior/2.jpg", caption: "Modern Bedroom" },
-  { src: "/images/interior/3.jpg", caption: "Elegant Kitchen" },
-  { src: "/images/interior/4.jpg", caption: "Living Room" },
-  { src: "/images/interior/5.jpg", caption: "Dining Area" },
-  { src: "/images/interior/6.jpg", caption: "Premium Hallway" },
-  { src: "/images/interior/7.jpg", caption: "Workspace Design" },
-  { src: "/images/interior/8.jpg", caption: "Kitchen Partition" },
+const u = (id: string) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=700&q=80`
 
-  { src: "/images/interior/9.jpg", caption: "Luxury Bathroom" },
-  { src: "/images/interior/10a.jpg", caption: "Bedroom Suite" },
-  { src: "/images/interior/10b.mp4", caption: "Bedroom Walkthrough" },
-  { src: "/images/interior/11.jpg", caption: "Guest Room" },
-  { src: "/images/interior/12.jpg", caption: "En-suite Bathroom" },
-  { src: "/images/interior/13.jpg", caption: "Executive Cabin" },
-  { src: "/images/interior/16.jpg", caption: "Fitness Club Reception" },
-  { src: "/images/interior/17.jpg", caption: "Gym Corridor" },
+/* 16 Gallery Items — dummy farmhouse imagery, swap with real photos later. */
+const gallery: GalleryItem[] = [
+  { src: u("photo-1600585154340-be6161a56a0c"), caption: "Luxury Living Room" },
+  { src: u("photo-1505691938895-1758d7feb511"), caption: "Open Verandah" },
+  { src: u("photo-1556909212-d5b604d0c90d"), caption: "Elegant Kitchen" },
+  { src: u("photo-1580587771525-78b9dba3b914"), caption: "Poolside Deck" },
+  { src: u("photo-1600566753190-17f0baa2a6c3"), caption: "Dining Pavilion" },
+  { src: u("photo-1600607687939-ce8a6c25118c"), caption: "Central Courtyard" },
+  { src: u("photo-1616594039964-ae9021a400a0"), caption: "Master Suite" },
+  { src: u("photo-1416879595882-3373a0480b5b"), caption: "Landscaped Garden" },
+
+  { src: u("photo-1600210492486-724fe5c67fb0"), caption: "Outdoor Lounge" },
+  { src: u("photo-1564013799919-ab600027ffc6"), caption: "Guest Cottage" },
+  { src: u("photo-1600047509807-ba8f99d2cdde"), caption: "Sunset Terrace" },
+  { src: u("photo-1493809842364-78817add7ffb"), caption: "Reading Nook" },
+  { src: u("photo-1530541930197-ff16ac917b0e"), caption: "Alfresco Dining" },
+  { src: u("photo-1572331165267-854da2b10ccc"), caption: "Private Pool" },
+  { src: u("photo-1518156677180-95a2893f3e9f"), caption: "Garden Walkway" },
+  { src: u("photo-1505843513577-22bb7d21e455"), caption: "Lakeside View" },
 ]
 
 /* Reveal Animation */
@@ -67,9 +70,7 @@ function Reveal({
       ref={ref}
       style={{ transitionDelay: `${delay}s` }}
       className={`transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] ${
-        visible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-7"
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-7"
       } ${className}`}
     >
       {children}
@@ -77,19 +78,18 @@ function Reveal({
   )
 }
 
-export default function InteriorGallery() {
+export default function FarmhouseGallery() {
   return (
     <section
       className="mx-auto w-full max-w-[1400px] px-5 pb-16 sm:px-8 md:pb-24"
-      aria-label="Interior project gallery"
+      aria-label="Farmhouse project gallery"
     >
       {/* Heading */}
-         <h1 className="mx-auto mb-10 max-w-3xl text-center text-[30px] font-medium text-[#C9A84C]">Image Gallery</h1>
-     
+      <h1 className="mx-auto mb-10 max-w-3xl text-center text-[30px] font-medium text-[#C9A84C]">Image Gallery</h1>
       <Reveal>
         <p className="mx-auto mb-10 max-w-3xl text-center text-[18px] font-medium text-[#C9A84C]">
-          Browse the gallery to discover how design transforms
-          spaces into experiences.
+          Browse the gallery to discover how architecture and landscape come
+          together in everyday living.
         </p>
       </Reveal>
 
@@ -104,7 +104,7 @@ export default function InteriorGallery() {
               width: "max-content",
             }}
           >
-            {gallery.map((item, idx) => (
+            {gallery.map((item) => (
               <figure
                 key={item.src}
                 className="group relative h-[360px] w-[260px] overflow-hidden rounded-2xl border border-black/[0.08] bg-[#ddd8cf] shadow-[0_28px_60px_-32px_rgba(60,50,30,0.45)] transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A84C]/40"
@@ -144,10 +144,7 @@ export default function InteriorGallery() {
       {/* Description */}
       <Reveal>
         <p className="mx-auto mt-10 max-w-[78ch] text-center text-[15px] leading-[1.75] text-[#6E6E6E] md:text-base">
-          Every interior tells a story—of aspirations, lifestyles,
-          values, and identity. At Vastara, we approach each project
-          as a unique journey, bringing together creativity,
-          technical expertise, and meticulous attention to detail.
+      Explore our farmhouse gallery and discover how thoughtful design transforms land into timeless living experiences.
         </p>
       </Reveal>
     </section>
