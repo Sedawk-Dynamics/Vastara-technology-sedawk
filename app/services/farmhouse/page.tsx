@@ -141,6 +141,13 @@ export default function FarmhousePage() {
               </div>
             </div>
           </section>
+           
+            <section>
+        <p className="mx-auto mt-10 max-w-[78ch] text-center text-[15px] leading-[1.75] text-[#6E6E6E] md:text-base">
+           Explore our farmhouse gallery and discover how thoughtful design transforms land into timeless living experiences.
+        </p>
+      </section>
+         
         <VerticalCTASection />
       </main>
 

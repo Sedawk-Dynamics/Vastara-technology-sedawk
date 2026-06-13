@@ -12,55 +12,44 @@ interface GalleryItem {
   src: string
   caption: string
 }
-
 const projects: Project[] = [
   {
-    title: "Project 1",
+    // title: "Project 1",
     desc: "A thoughtfully crafted residence where warmth, practicality and luxury come together seamlessly.",
     images: [
-      "/images/project/01 Mr Amit/1.jpg",
-      "/images/project/01 Mr Amit/2.jpg",
-      "/images/project/01 Mr Amit/3.jpg",
+      "/images/architectural/1.jpg",
+      "/images/architectural/4.jpg",
+      "/images/architectural/5.jpg",
     ],
   },
   {
-    title: "Project 2",
+    // title: "Project 2",
     desc: "A contemporary urban home defined by clarity, proportion and refined detailing.",
     images: [
-      "/images/project/02 Mr Desai/1.jpg",
-      "/images/project/02 Mr Desai/2.jpg",
-      "/images/project/02 Mr Desai/3.jpg",
-      "/images/project/02 Mr Desai/4.jpg",
-      "/images/project/02 Mr Desai/5.jpg",
-      "/images/project/02 Mr Desai/6.jpg",
-      "/images/project/02 Mr Desai/7.jpg",
-      "/images/project/02 Mr Desai/8.jpg",
+      "/images/architectural/10a.jpg",
+      "/images/architectural/11.jpg",
+      "/images/architectural/13.jpg",
     ],
   },
   {
-    title: "Project 3",
+    // title: "Project 3",
     desc: "Designed with a focus on harmony and effortless functionality.",
     images: [
-      "/images/project/03 Mr Kunal Saxena/1.jpg",
-      "/images/project/03 Mr Kunal Saxena/2.jpg",
-      "/images/project/03 Mr Kunal Saxena/3.jpg",
-      "/images/project/03 Mr Kunal Saxena/4.jpg",
-      "/images/project/03 Mr Kunal Saxena/5.jpg",
+      "/images/architectural/14.jpg",
+      "/images/architectural/16.jpg",
+      "/images/architectural/10b.mp4",
     ],
   },
   {
-    title: "Project 4",
+    // title: "Project 4",
     desc: "This home reimagines classical influences through a contemporary perspective.",
     images: [
-      "/images/project/04 Mr Satish/1.jpg",
-      "/images/project/04 Mr Satish/2.jpg",
-      "/images/project/04 Mr Satish/3.jpg",
-      "/images/project/04 Mr Satish/4.jpg",
-      "/images/project/04 Mr Satish/5.jpg",
-      "/images/project/04 Mr Satish/6.jpg",
-      "/images/project/04 Mr Satish/Video 1.mp4",
-      "/images/project/04 Mr Satish/Video 2.mp4",
-      "/images/project/04 Mr Satish/Video 3.mp4",
+      "/images/architectural/19.jpg",
+      "/images/architectural/20.jpg",
+      "/images/architectural/b.jpg",
+      "/images/architectural/c.jpg",
+      "/images/architectural/e.jpg",
+      "/images/architectural/f.jpg",
     ],
   },
 ]
