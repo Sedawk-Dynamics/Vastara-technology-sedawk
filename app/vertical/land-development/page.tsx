@@ -8,10 +8,10 @@ import Footer from '@/components/vastara/Footer'
 export const metadata: Metadata = {
   title: 'Land Development | Vastara International Properties',
   description:
-    'Turning potential into high-value assets. Strategic land identification, development, and infrastructure planning.',
+    'Understand the land. Respect its nature. Leave it better than before. Strategic land identification, development, and infrastructure planning.',
 }
 
-export default function LandDevelopmentPage() {
+export default function VerticalLandDevelopmentPage() {
   return (
     <>
       <Navbar />

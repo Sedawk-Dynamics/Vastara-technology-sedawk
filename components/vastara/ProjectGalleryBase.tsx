@@ -2,103 +2,15 @@
 
 import { useState, useRef, useEffect, type ReactNode } from "react"
 import { ChevronLeft, ChevronRight, Play } from "lucide-react"
+import type { Project } from "@/components/vastara/galleryTypes"
 
 /* ---------------------------------------------------------------- *
- * DUMMY DATA — placeholder projects, images and a sample video.
- * Replace `media`, specs and copy with real project content later.
+ * Shared gallery base — the thumbnail-strip + image-display +
+ * project-data viewer. Per-vertical wrappers pass their own
+ * `heading` and `projects`, so each section can read differently.
+ * Types + the `u()` helper live in ./galleryTypes (a plain module),
+ * so server-component wrappers can build their data safely.
  * ---------------------------------------------------------------- */
-
-type Media =
-  | { type: "image"; src: string }
-  | { type: "video"; src: string; poster: string }
-
-interface Project {
-  title: string
-  location: string
-  year: string
-  specs: { label: string; lines: string[] }[]
-  description: string[]
-  media: Media[]
-}
-
-const u = (id: string) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=80`
-
-const projects: Project[] = [
-  {
-    title: "Kamal Industrial Complex",
-    location: "UPSIDC, Hapur Road, UP",
-    year: "2023",
-    specs: [
-      { label: "Type", lines: ["Industrial", "3-Block Shed"] },
-      { label: "Structure", lines: ["RCC Frame", "PEB Roof"] },
-      { label: "Area", lines: ["80,000", "sq ft"] },
-    ],
-    description: [
-      "The principal engineer for this project was Ar. Rahul Gupta (Noida), under whose expert guidance Ar. Sunita Verma designed and managed the construction of this turnkey industrial complex. Built using a pre-engineered building technique, the facility features structural bays with a base span of 24 metres, tapering at the gable ends with a gentle eave setback.",
-      "The complex was commissioned by a mid-sized FMCG manufacturer from Ghaziabad, a client known for their efficiency, pragmatism, and focus on operational excellence — traits that aligned perfectly with the project's philosophy of economy and durability.",
-    ],
-    media: [
-      { type: "image", src: u("photo-1504307651254-35680f356dfd") },
-      { type: "image", src: u("photo-1503387762-592deb58ef4e") },
-      { type: "image", src: u("photo-1590725140246-20acdee442be") },
-      { type: "image", src: u("photo-1565793298595-6a879b1d9492") },
-      { type: "image", src: u("photo-1581094794329-c8112a89af12") },
-      { type: "image", src: u("photo-1541888946425-d81bb19240f5") },
-      {
-        type: "video",
-        src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-        poster: u("photo-1416339306562-f3d12fefd36f"),
-      },
-    ],
-  },
-  {
-    title: "Riverside Logistics Park",
-    location: "MIDC, Bhiwandi, Maharashtra",
-    year: "2022",
-    specs: [
-      { label: "Type", lines: ["Warehousing", "Grade-A"] },
-      { label: "Structure", lines: ["Steel Frame", "Insulated Roof"] },
-      { label: "Area", lines: ["1,20,000", "sq ft"] },
-    ],
-    description: [
-      "Developed as a Grade-A warehousing destination, Riverside Logistics Park was conceived to serve regional distribution networks with clear-height bays, dock-level loading and an efficient circulation plan that prioritises rapid turnaround for heavy freight.",
-      "The site was prepared through extensive ground levelling and infrastructure readiness works, ensuring utilities, drainage and access roads were operational from day one for the anchor logistics tenant.",
-    ],
-    media: [
-      { type: "image", src: u("photo-1553413077-190dd305871c") },
-      { type: "image", src: u("photo-1586528116311-ad8dd3c8310d") },
-      { type: "image", src: u("photo-1581092160562-40aa08e78837") },
-      { type: "image", src: u("photo-1487958449943-2429e8be8625") },
-      {
-        type: "video",
-        src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-        poster: u("photo-1416339306562-f3d12fefd36f"),
-      },
-    ],
-  },
-  {
-    title: "Greenfield Residential Township",
-    location: "NH-48 Corridor, Pune",
-    year: "2024",
-    specs: [
-      { label: "Type", lines: ["Residential", "Plotted Layout"] },
-      { label: "Structure", lines: ["Phased Civil", "Landscaped"] },
-      { label: "Area", lines: ["18", "acres"] },
-    ],
-    description: [
-      "A nature-responsive plotted township master-planned along an emerging growth corridor, Greenfield integrates landscaped avenues, community open spaces and future-ready infrastructure into a cohesive residential environment.",
-      "Development followed a phased approach — beginning with site assessment and feasibility, progressing through infrastructure planning and culminating in a layout positioned for long-term appreciation and quality of life.",
-    ],
-    media: [
-      { type: "image", src: u("photo-1500382017468-9049fed747ef") },
-      { type: "image", src: u("photo-1448630360428-65456885c650") },
-      { type: "image", src: u("photo-1416339306562-f3d12fefd36f") },
-      { type: "image", src: u("photo-1564013799919-ab600027ffc6") },
-      { type: "image", src: u("photo-1480074568708-e7b720bb3f09") },
-    ],
-  },
-]
 
 /* IntersectionObserver-driven scroll reveal (matches site convention). */
 function Reveal({
@@ -282,9 +194,13 @@ function GalleryViewer({ project }: { project: Project }) {
   )
 }
 
-export default function ProjectGallery() {
-  const [activeProject, setActiveProject] = useState(0)
-
+export default function ProjectGalleryBase({
+  heading,
+  projects,
+}: {
+  heading: string
+  projects: Project[]
+}) {
   return (
     <section className="bg-white px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
@@ -296,31 +212,17 @@ export default function ProjectGallery() {
             <span className="h-px w-9 bg-gradient-to-r from-[#C9A84C] to-transparent" />
           </span>
           <h2 className="section-heading text-3xl font-bold leading-tight text-[#1E1E1E] md:text-5xl">
-            Featured Projects
+            {heading}
           </h2>
         </Reveal>
 
-        {/* Project selector tabs */}
-        <div className="mb-8 flex flex-wrap justify-center gap-3">
-          {projects.map((p, i) => (
-            <button
-              key={p.title}
-              type="button"
-              onClick={() => setActiveProject(i)}
-              className={`body-font rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300 ${
-                i === activeProject
-                  ? "border-[#C9A84C] bg-[#C9A84C] text-white shadow-[0_10px_24px_-12px_rgba(201,168,76,0.8)]"
-                  : "border-black/15 text-[#4A4A4A] hover:border-[#C9A84C] hover:text-[#9E7B2F]"
-              }`}
-            >
-              {p.title}
-            </button>
+        <div className="flex flex-col gap-12 md:gap-16">
+          {projects.map((project) => (
+            <Reveal key={project.title}>
+              <GalleryViewer project={project} />
+            </Reveal>
           ))}
         </div>
-
-        <Reveal>
-          <GalleryViewer project={projects[activeProject]} />
-        </Reveal>
       </div>
     </section>
   )

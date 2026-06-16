@@ -30,14 +30,19 @@ const servicesLinks = [
 
 const verticalLinks = [
   {
-    label: "Farmhouse Planning & Development",
-    href: "/vertical/farmhouse",
+    label: "Land Development",
+    href: "/vertical/land-development",
   },
-
-  {
+   {
     label: "Real Estate Investment Opportunities",
     href: "/vertical/investment",
   },
+  // {
+  //   label: "Farmhouse Planning & Development",
+  //   href: "/vertical/farmhouse",
+  // },
+
+ 
   {
     label: "Industrial Land Readiness & Setup",
     href: "/vertical/industrial",
