@@ -16,7 +16,7 @@ export default function LandDevelopmentPage() {
     <>
       <Navbar />
       <LandDevelopmentContent />
-      <LandDevelopmentGallery />
+      {/* <LandDevelopmentGallery /> */}
       <VerticalCTASection />
       <Footer />
     </>

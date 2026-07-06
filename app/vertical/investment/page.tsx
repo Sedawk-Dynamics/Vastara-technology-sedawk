@@ -16,7 +16,7 @@ export default function InvestmentPage() {
     <>
       <Navbar />
       <InvestmentContent />
-      <InvestmentGallery />
+      {/* <InvestmentGallery /> */}
       <VerticalCTASection />
       <Footer />
     </>

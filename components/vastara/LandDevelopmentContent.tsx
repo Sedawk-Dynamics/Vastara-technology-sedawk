@@ -171,7 +171,7 @@ export default function LandDevelopmentContent() {
       {/* ===================== HERO ===================== */}
       <section className="relative flex h-[70vh] min-h-[460px] w-full items-center justify-center overflow-hidden pt-20">
         <Image
-          src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1920&q=80"
+          src="/land-devlop-hero.jpeg"
           alt="Land Development"
           fill
           priority
@@ -262,7 +262,7 @@ export default function LandDevelopmentContent() {
 
           <Reveal delay={0.1} className="relative h-80 overflow-hidden rounded-3xl shadow-[0_40px_80px_-40px_rgba(60,50,30,0.55)] md:h-[460px]">
             <Image
-              src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1400&q=80"
+              src="/land-development.jpeg"
               alt="Our Development Approach"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

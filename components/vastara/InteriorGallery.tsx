@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect, type ReactNode } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 interface Project {
   title: string
@@ -49,7 +50,6 @@ const projects: Project[] = [
       "/images/architectural/b.jpg",
       "/images/architectural/c.jpg",
       "/images/architectural/e.jpg",
-      "/images/architectural/f.jpg",
     ],
   },
 ]
@@ -110,6 +110,16 @@ function Reveal({
 }
 
 export default function ProjectGallery() {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  const scrollByAmount = (direction: "left" | "right") => {
+    const el = scrollRef.current
+    if (!el) return
+    // scroll roughly one viewport width per click
+    const amount = el.clientWidth * 0.8
+    el.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" })
+  }
+
   return (
     <section
       className="mx-auto w-full max-w-[1400px] px-5 py-16 sm:px-8 md:py-24"
@@ -129,18 +139,42 @@ export default function ProjectGallery() {
         </p>
       </Reveal>
 
-      {/* Horizontal Scroll Gallery */}
+      {/* Horizontal Gallery with arrow navigation */}
       <Reveal>
-        <div className="overflow-x-auto overflow-y-hidden pb-4 scroll-smooth">
-          <div
-            className="grid grid-rows-2 gap-5"
-            style={{
-              gridAutoFlow: "column",
-              gridAutoColumns: "280px",
-              width: "max-content",
-            }}
+        <div className="relative">
+          {/* Left arrow */}
+          <button
+            type="button"
+            onClick={() => scrollByAmount("left")}
+            aria-label="Previous images"
+            className="absolute left-2 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-[#E7E1D6] bg-white/90 text-[#1E1E1E] shadow-[0_10px_30px_-10px_rgba(60,50,30,0.4)] backdrop-blur transition-all duration-300 hover:border-[#C9A84C]/50 hover:bg-white hover:text-[#C9A84C] md:left-3"
           >
-            {gallery.map((item, idx) => (
+            <ChevronLeft size={22} strokeWidth={1.8} />
+          </button>
+
+          {/* Right arrow */}
+          <button
+            type="button"
+            onClick={() => scrollByAmount("right")}
+            aria-label="Next images"
+            className="absolute right-2 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-[#E7E1D6] bg-white/90 text-[#1E1E1E] shadow-[0_10px_30px_-10px_rgba(60,50,30,0.4)] backdrop-blur transition-all duration-300 hover:border-[#C9A84C]/50 hover:bg-white hover:text-[#C9A84C] md:right-3"
+          >
+            <ChevronRight size={22} strokeWidth={1.8} />
+          </button>
+
+          <div
+            ref={scrollRef}
+            className="overflow-x-auto overflow-y-hidden pb-4 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            <div
+              className="grid grid-rows-2 gap-5"
+              style={{
+                gridAutoFlow: "column",
+                gridAutoColumns: "280px",
+                width: "max-content",
+              }}
+            >
+              {gallery.map((item, idx) => (
               <figure
                 key={`${item.src}-${idx}`}
                 className="group relative h-[360px] w-[260px] overflow-hidden rounded-[28px] border border-[#E7E1D6] bg-[#ddd8cf] shadow-[0_28px_60px_-32px_rgba(60,50,30,0.25)] transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A84C]/40"
@@ -173,7 +207,8 @@ export default function ProjectGallery() {
                   {item.caption}
                 </figcaption>
               </figure>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </Reveal>

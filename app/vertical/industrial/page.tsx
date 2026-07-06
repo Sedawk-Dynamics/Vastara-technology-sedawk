@@ -16,7 +16,7 @@ export default function IndustrialPage() {
     <>
       <Navbar />
       <IndustrialContent />
-      <IndustrialGallery />
+      {/* <IndustrialGallery /> */}
       <VerticalCTASection />
       <Footer />
     </>
