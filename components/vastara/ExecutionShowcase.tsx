@@ -21,6 +21,22 @@ interface Project {
 
 const executionProjects: Project[] = [
   {
+    title: "Omkareshwar Crusher Plant Project",
+    location: "Omkareshwar, MP",
+    year: "2026",
+    status: "On-going",
+    desc:
+      "The Omkareshwar Project involves the supervision and operational management of an existing installed crusher plant, with a production capacity of approximately 3,000 MT/Day of processed material. The operations include overseeing crushing and processing, maintaining production quality and coordinating the dispatch of finished material to respective project sites as per the client’s specifications and requirements.",
+    images: [
+      "/execution/12/omkareshwar-1.jpeg",
+      "/execution/12/omkareshwar-2.jpeg",
+      "/execution/12/omkareshwar-3.jpeg",
+      "/execution/12/omkareshwar-4.jpeg",
+      "/execution/12/omkareshwar-5.jpeg",
+    ],
+  },
+
+  {
     title: "Casting Yard Dismantling",
     location: "Hapur Camp 1 & 2",
     year: "2026",
