@@ -28,6 +28,7 @@ const executionProjects: Project[] = [
     desc:
       "The Omkareshwar Project involves the supervision and operational management of an existing installed crusher plant, with a production capacity of approximately 3,000 MT/Day of processed material. The operations include overseeing crushing and processing, maintaining production quality and coordinating the dispatch of finished material to respective project sites as per the client’s specifications and requirements.",
     images: [
+      "/Omkareshwar Crusher Plant Project.mp4",
       "/execution/12/omkareshwar-1.jpeg",
       "/execution/12/omkareshwar-2.jpeg",
       "/execution/12/omkareshwar-3.jpeg",
@@ -262,12 +263,25 @@ function ProjectCard({
           >
             {project.images.map((src, idx) => (
               <div key={idx} className="relative h-full flex-[0_0_100%]">
-                <img
-                  src={src}
-                  alt={`${project.title} — view ${idx + 1}`}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.06]"
-                />
+                {/\.(mp4|webm)$/i.test(src) ? (
+                  <video
+                    src={src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={`${project.title} — video`}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={src}
+                    alt={`${project.title} — view ${idx + 1}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.06]"
+                  />
+                )}
               </div>
             ))}
           </div>
