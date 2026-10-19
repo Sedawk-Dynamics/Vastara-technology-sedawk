@@ -21,6 +21,21 @@ interface Project {
 
 const executionProjects: Project[] = [
   {
+    title: "TBM Muck Disposal",
+    location: "Indore, MP",
+    year: "2026",
+    status: "On-going",
+    desc:
+      "Systematic management, transportation, and disposal of excavated muck generated during Tunnel Boring Machine (TBM) operations at the Indore Metro Project, ensuring efficient material handling, compliance with environmental and safety standards, and uninterrupted tunneling operations.",
+    images: [
+      "/execution/13/TBM Muck Disposal1.jpeg",
+      "/execution/13/TBM Muck Disposal2.jpeg",
+      "/execution/13/TBM Muck Disposal3.jpeg",
+      "/execution/13/TBM Muck Disposal4.jpeg",
+    ],
+  },
+
+  {
     title: "Omkareshwar Crusher Plant Project",
     location: "Omkareshwar, MP",
     year: "2026",
